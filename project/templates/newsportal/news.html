@@ -1,0 +1,17 @@
+{% extends 'newsportal/default.html' %}
+
+{% block title %}
+Post
+{% endblock title %}
+
+{% block content %}
+   <h1>Все статьи</h1>
+   {% if articles %}
+        {% for art in articles %}
+            <p>{{art.title}}</p>
+            <a href="{% url "newsportal:news_detail"  art.id %}">link</a>
+        {% endfor %}
+   {% else %}
+       <h2>Статей нет!</h2>
+   {% endif %}
+{% endblock content %}

@@ -1,5 +1,15 @@
-from django.shortcuts import render
+from django.views.generic import ListView, DetailView
+from .models import Post
 
 
-def index(request):
-    return render(request, 'index.html')
+
+class PostList(ListView):
+    model = Post
+    ordering = 'title'
+    template_name = 'newsportal/news.html'
+    context_object_name = 'articles'
+
+class PostDetail(DetailView):
+    model = Post
+    template_name = 'newsportal/news_detail.html'
+    context_object_name = 'article'
