@@ -7,6 +7,6 @@ Post
 {% endblock title %}
 
 {% block content %}
-   <h1>{{ article.title|big_title }}</h1>
-   <h3>{{ article.text }}</h3>
+   <h1>{{ article.title|censor }}</h1>
+   <h3>{{ article.text|censor }}</h3>
 {% endblock content %}

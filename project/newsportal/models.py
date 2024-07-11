@@ -6,8 +6,8 @@ class Author(models.Model):
     authorUser = models.OneToOneField(User, on_delete=models.CASCADE)
     ratingAuthor = models.SmallIntegerField(default=0)
 
-    def __str__(self):
-        return self.authorUser
+    #def __str__(self):
+        #return self.authorUser.username
 
 
     class Meta:
@@ -32,8 +32,8 @@ class Author(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=64, unique=True)
 
-    def __str__(self):
-        return self.name
+    #def __str__(self):
+        #return self.name
 
     class Meta:
         verbose_name='Категория'
@@ -56,8 +56,8 @@ class Post(models.Model):
     text = models.TextField()
     rating = models.SmallIntegerField(default=0)
 
-    def __str__(self):
-        return self.title
+    #def __str__(self):
+        #return self.title
 
     class Meta:
         verbose_name='Публикация'
@@ -79,8 +79,8 @@ class PostCategory(models.Model):
     postThrough = models.ForeignKey(Post, on_delete=models.CASCADE)
     categoryThrough = models.ForeignKey(Category, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.categoryThrough
+    #def __str__(self):
+        #return self.categoryThrough
 
     class Meta:
         verbose_name='Категория публикации'
@@ -94,8 +94,8 @@ class Comment(models.Model):
     dateCreation = models.DateTimeField(auto_now_add=True)
     rating = models.SmallIntegerField(default=0)
 
-    def __str__(self):
-        return self.text
+    #def __str__(self):
+        #return self.text
 
     class Meta:
         verbose_name='Комментарий'
