@@ -8,5 +8,6 @@ Post
 
 {% block content %}
    <h1>{{ article.title|censor }}</h1>
-   <h3>{{ article.text|censor }}</h3>
+   <p>{{ article.dateCreation }}</p>
+   <h5>{{ article.text|censor }}</h5>
 {% endblock content %}
